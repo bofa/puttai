@@ -11,7 +11,7 @@ export default class IndexPage extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
     init(window.innerWidth - 256 - 30, window.innerHeight - 64 - 20);
-    createPlayer('AI', new AI(getPlayers));
+    createPlayer('AI', new AI('AI', getPlayers));
     createPlayer('Dummy');
   }
 

@@ -100,4 +100,9 @@ export default class Player {
   removePlayer() {
     this.scene.remove(this.mesh);
   }
+
+  getPosition() {
+    const p = this.mesh.position;
+    return [p.x, p.y, p.z];
+  }
 }
