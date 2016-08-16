@@ -1,5 +1,6 @@
 import React from 'react';
-import { init, resize } from '../services/putt';
+import { init, resize, createPlayer } from '../services/putt';
+import AI from '../ai.js';
 
 export default class IndexPage extends React.Component {
 
@@ -10,6 +11,7 @@ export default class IndexPage extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
     init(window.innerWidth - 256 - 30, window.innerHeight - 64 - 20);
+    createPlayer('Hej', new AI());
   }
 
   componentWillUnmount() {

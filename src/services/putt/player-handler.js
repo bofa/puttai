@@ -11,9 +11,9 @@ export default class PlayerHandler {
     this.respawnCallback = () => {};
   }
 
-  createPlayer(index, Physijs) {
+  createPlayer(index, Physijs, ai) {
     this.players++;
-    const newPlayer = new Player(this.scene, index, Physijs);
+    const newPlayer = new Player(this.scene, index, Physijs, ai);
     this.playersArray.push(newPlayer);
 
     return newPlayer;
@@ -54,6 +54,10 @@ export default class PlayerHandler {
 
   setRespawnCallback(callback) {
     this.respawnCallback = callback;
+  }
+
+  getPlayers() {
+    return this.playersArray;
   }
 
 }

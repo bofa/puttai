@@ -94,8 +94,8 @@ export function init(width, heigth) {
 /**
  * Create new Player
  */
-export function createPlayer(id) {
-  mPlayerHandler.createPlayer(id, Physijs);
+export function createPlayer(id, ai) {
+  mPlayerHandler.createPlayer(id, Physijs, ai);
 }
 
 /**
@@ -124,4 +124,12 @@ export function jump(id, data) {
  */
 export function setRespawnCallback(callback) {
   mPlayerHandler.setRespawnCallback(callback);
+}
+
+/**
+ * @param {function} callback - callback that gets the player id as argument.
+ * @return {array} players - List of all the players.
+ */
+export function setRespawnCallback(callback) {
+  mPlayerHandler.getPlayers();
 }

@@ -9,11 +9,12 @@ export default class Player {
 
   static loader = new THREE.JSONLoader(); // init the loader util
 
-  constructor(scene, playerIndex, Physijs) {
+  constructor(scene, playerIndex, Physijs, ai) {
     this.playerIndex = playerIndex;
     this.scene = scene;
     this.mass = 1;
     this.jumpCooldown = 0;
+    this.ai = ai;
 
     this.forceVector = new THREE.Vector3(0, 0, 0);
     this.forceVectorSensor = new THREE.Vector3(0, 0, 0);
@@ -68,6 +69,11 @@ export default class Player {
       return;
     }
 
+    // Run ai
+    if(this.ai) {
+      this.updateSensor(this.ai.update());
+    }
+
     // Lowpass filter.
     this.forceVector.add(this.forceVectorSensor);
     this.forceVector.multiplyScalar(0.5);
@@ -81,6 +87,8 @@ export default class Player {
       this.reset();
       resetCallback(this.playerIndex);
     }
+
+
   }
 
   reset() {
