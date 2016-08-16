@@ -5,6 +5,7 @@ export default class AI {
   }
 
   update() {
+    const players = this.getPlayers();
     return [5, 5, 5];
   }
 

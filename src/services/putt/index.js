@@ -130,6 +130,6 @@ export function setRespawnCallback(callback) {
  * @param {function} callback - callback that gets the player id as argument.
  * @return {array} players - List of all the players.
  */
-export function setRespawnCallback(callback) {
-  mPlayerHandler.getPlayers();
+export function getPlayers() {
+  return mPlayerHandler.getPlayers();
 }
