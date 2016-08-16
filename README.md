@@ -7,7 +7,7 @@ First install [Node and NPM](https://nodejs.org/en/),
 
 Then enter the repo with the terminal and run
 
-'''
+```
 npm install
 npm install webpack-dev-server -g
-'''
+```
