@@ -3,6 +3,7 @@ import { initGameObjects, checkCube } from './game-objects';
 
 // inject Three.js
 const Physijs = require('physijs-browserify')(THREE);
+// const Physijs = require('physijs-webpack')(THREE);
 
 Physijs.scripts.worker = 'physijs_worker.js';
 Physijs.scripts.ammo = 'ammo.js';
